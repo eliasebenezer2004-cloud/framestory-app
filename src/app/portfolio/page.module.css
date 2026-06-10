@@ -1,0 +1,222 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.hero {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.headerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: #F0F0F0;
+}
+
+.headerSubtext {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #E0E0E0;
+}
+
+.gallerySection {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.filterBtn {
+  background: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.filterBtn:hover {
+  color: var(--accent-gold);
+}
+
+.activeFilter {
+  border-bottom-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  grid-auto-flow: dense;
+}
+
+.gridItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Simulate masonry by changing aspect ratio for every nth item */
+.gridItem:nth-child(3n + 1) {
+  aspect-ratio: 4 / 5;
+  grid-row: span 2;
+}
+
+.gridItem:nth-child(4n + 2) {
+  aspect-ratio: 16 / 9;
+}
+
+.gridImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gridItem:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gridItem:hover .overlay {
+  opacity: 1;
+}
+
+.imageTitle {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 1rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover .imageTitle {
+  transform: translateY(0);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  color: white;
+  z-index: 100000;
+  transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: var(--accent-gold);
+}
+
+.prevBtn, .nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: white;
+  z-index: 100000;
+  transition: color 0.3s ease;
+}
+
+.prevBtn {
+  left: 30px;
+}
+
+.nextBtn {
+  right: 30px;
+}
+
+.prevBtn:hover, .nextBtn:hover {
+  color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .lightboxContent {
+    width: 100vw;
+    height: 60vh;
+  }
+  .prevBtn { left: 10px; }
+  .nextBtn { right: 10px; }
+}

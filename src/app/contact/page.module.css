@@ -1,0 +1,206 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding-top: 120px; /* Offset for fixed header */
+}
+
+.contactSection {
+  padding: 4rem 0 8rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.subtext {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.iconWrapper {
+  color: var(--accent-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactList h4 {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.contactList p, .contactLink {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contactLink {
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--accent-gold);
+}
+
+/* Form Styles */
+.form {
+  background-color: var(--bg-card);
+  padding: 3rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 2px;
+  color: #F0F0F0;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 10px 0;
+  transition: border-color 0.3s ease;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent-gold);
+}
+
+.inputGroup label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Float label up when focused or not empty */
+.inputGroup input:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label,
+.inputGroup textarea:focus ~ label,
+.inputGroup textarea:not(:placeholder-shown) ~ label,
+.inputGroup select:focus ~ label,
+.inputGroup select:valid ~ label {
+  top: -20px;
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+}
+
+.inputGroup select option {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.dateLabel {
+  top: -20px !important;
+  font-size: 0.8rem !important;
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.mapSection {
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+}
+
+@media (max-width: 960px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .form {
+    padding: 2.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,161 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.hero {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 2px;
+  color: #F0F0F0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.founderSection {
+  padding: 8rem 0;
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.founderImage {
+  object-fit: cover;
+}
+
+.founderText {
+  padding: 2rem 0;
+}
+
+.greeting {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+}
+
+.letter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.signature {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.philosophySection {
+  padding: 8rem 2rem;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.sectionHeading {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent-gold);
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.pillar {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.iconWrapper {
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pillarTitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.pillarDesc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .founderGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .imageWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,29 @@
+.portfolioSection {
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  height: 100vh;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.image {
+  transform: scale(1.05); /* Slight scale to prevent edge bleeding on fast scroll */
+}
