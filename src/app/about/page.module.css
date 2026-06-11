@@ -150,6 +150,15 @@
 }
 
 @media (max-width: 900px) {
+  .founderSection {
+    padding: 4rem 0;
+  }
+  .philosophySection {
+    padding: 4rem 1.5rem;
+  }
+  .sectionHeading {
+    margin-bottom: 3rem;
+  }
   .founderGrid {
     grid-template-columns: 1fr;
     gap: 3rem;

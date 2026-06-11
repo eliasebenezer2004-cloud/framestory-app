@@ -6,7 +6,7 @@
   --text-primary: #F0F0F0;
   --text-secondary: #A0A0A0;
   --accent-gold: #D4AF37;
-  --bg-overlay: rgba(18, 18, 18, 0.85);
+  --bg-overlay: rgba(18, 18, 18, 0.95);
   
   --font-heading: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
@@ -19,7 +19,7 @@
   --text-primary: #1A1A1A;
   --text-secondary: #555555;
   --accent-gold: #B38F2B; /* slightly darker gold for contrast */
-  --bg-overlay: rgba(250, 250, 250, 0.85);
+  --bg-overlay: rgba(250, 250, 250, 0.98);
 }
 
 * {
