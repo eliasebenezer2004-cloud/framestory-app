@@ -66,4 +66,9 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+  .logos {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

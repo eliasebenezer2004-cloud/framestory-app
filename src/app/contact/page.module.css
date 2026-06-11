@@ -195,12 +195,20 @@
 }
 
 @media (max-width: 960px) {
+  .main {
+    padding-top: 80px;
+  }
+  
   .container {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
   }
   
   .form {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .contactSection {
+    padding: 2rem 0 6rem;
   }
 }

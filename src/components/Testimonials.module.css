@@ -92,8 +92,14 @@
     padding: 4rem 1rem;
   }
   
+  .container {
+    padding: 0 1rem;
+  }
+  
   .card {
     padding: 2rem 1.5rem;
+    width: calc(100vw - 3rem);
+    max-width: none;
   }
   
   .title {
@@ -104,5 +110,9 @@
   .marqueeWrapper {
     mask-image: none;
     -webkit-mask-image: none;
+  }
+  
+  .marqueeTrack {
+    gap: 1.5rem;
   }
 }

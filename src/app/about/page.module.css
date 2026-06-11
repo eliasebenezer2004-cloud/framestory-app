@@ -151,20 +151,23 @@
 
 @media (max-width: 900px) {
   .founderSection {
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
   .philosophySection {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
   }
   .sectionHeading {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .founderGrid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
   .imageWrapper {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
+  }
+  .hero {
+    height: 35vh;
   }
 }

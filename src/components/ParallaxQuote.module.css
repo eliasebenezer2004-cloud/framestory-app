@@ -44,3 +44,22 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+@media (max-width: 900px) {
+  .parallaxSection {
+    background-attachment: scroll;
+    min-height: 50vh;
+  }
+  
+  .content {
+    padding: 0 1rem;
+  }
+  
+  .quoteText {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  
+  .author {
+    font-size: 1rem;
+  }
+}

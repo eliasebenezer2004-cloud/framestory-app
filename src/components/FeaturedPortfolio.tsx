@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,8 +17,18 @@ const portfolioImages = [
 export default function FeaturedPortfolio() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     if (sliderRef.current && containerRef.current) {
@@ -41,7 +51,7 @@ export default function FeaturedPortfolio() {
         ScrollTrigger.getAll().forEach(t => t.kill());
       };
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className={styles.portfolioSection} ref={containerRef}>

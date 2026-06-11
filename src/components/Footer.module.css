@@ -104,3 +104,19 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.8rem;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tagline {
+    max-width: 100%;
+  }
+}

@@ -76,3 +76,43 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+.ctaButton {
+  background-color: var(--accent-gold);
+  color: #121212;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e5be48;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 1.5rem;
+  }
+  
+  .title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .subtitle {
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .ctaButton {
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+  }
+}

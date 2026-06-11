@@ -27,3 +27,28 @@
 .image {
   transform: scale(1.05); /* Slight scale to prevent edge bleeding on fast scroll */
 }
+
+@media (max-width: 900px) {
+  .portfolioSection {
+    overflow: visible;
+  }
+  
+  .slider {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 1rem 0;
+  }
+  
+  .imageWrapper {
+    width: calc(100% - 2rem);
+    height: 60vh;
+    margin: 0 auto;
+  }
+}
