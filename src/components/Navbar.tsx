@@ -46,7 +46,7 @@ export default function Navbar() {
     if (!isDesktop) return;
     hoverTimeoutRef.current = setTimeout(() => {
       setDrawerOpen(false);
-    }, 400);
+    }, 600);
   }, [isDesktop]);
 
   const handleToggleClick = () => {
@@ -90,7 +90,6 @@ export default function Navbar() {
       <div 
         className={`${styles.backdrop} ${drawerOpen ? styles.backdropOpen : ""}`} 
         onClick={closeDrawer}
-        onMouseLeave={handleEdgeLeave}
       ></div>
 
       {/* Drawer */}
