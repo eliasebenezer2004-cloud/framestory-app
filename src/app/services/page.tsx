@@ -8,6 +8,7 @@ const services = [
     description: "Our signature offering. We capture the grandeur, the rituals, and the unspoken moments of your big day with a cinematic, unobtrusive approach.",
     features: ["Pre-wedding consultation", "Multiple shooters", "Cinematic highlight film", "Premium flush-mount albums"],
     image: "/wedding1.png",
+    position: "center",
   },
   {
     id: "pre-wedding",
@@ -15,6 +16,7 @@ const services = [
     description: "Before the madness begins, let's document your chemistry. Whether it's the beaches of Chennai or the paddy fields around Trichy, we create pure magic.",
     features: ["Location scouting", "Styling assistance", "Drone videography", "Save-the-date teasers"],
     image: "/prewed1.png",
+    position: "center",
   },
   {
     id: "puberty",
@@ -22,6 +24,7 @@ const services = [
     description: "A celebration of coming of age. We focus on the vibrant colors, the traditional half-saree details, and the joyous family gatherings.",
     features: ["Candid & traditional coverage", "Focus on rituals", "Custom photo books"],
     image: "/puberty1.png",
+    position: "top center",
   },
   {
     id: "seemantham",
@@ -29,6 +32,7 @@ const services = [
     description: "Honoring the mother-to-be. We beautifully document the blessings, the traditional attire, and the pure joy of welcoming a new life.",
     features: ["Intimate family portraits", "Candid emotional moments", "Highlight reels"],
     image: "/seemantham2.png",
+    position: "center",
   }
 ];
 
@@ -48,7 +52,7 @@ export default function ServicesPage() {
           <div 
             key={service.id} 
             className={styles.serviceBlock} 
-            style={{ backgroundImage: `url(${service.image})` }}
+            style={{ backgroundImage: `url(${service.image})`, backgroundPosition: service.position }}
           >
             <div className={styles.blockOverlay}></div>
             <div className={styles.blockContent}>
