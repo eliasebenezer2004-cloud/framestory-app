@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 import styles from "./Testimonials.module.css";
 
@@ -23,31 +26,89 @@ const reviews = [
 ];
 
 export default function Testimonials() {
-  // Duplicate reviews to create a seamless infinite loop
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // Auto-advance on mobile
+  useEffect(() => {
+    if (!isMobile) return;
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % reviews.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isMobile]);
+
+  // Duplicate reviews for desktop marquee loop
   const duplicatedReviews = [...reviews, ...reviews, ...reviews];
 
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <h2 className={`${styles.title} gradient-text`}>Client Stories</h2>
-        <div className={styles.marqueeWrapper}>
-          <div className={styles.marqueeTrack}>
-            {duplicatedReviews.map((review, index) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.stars}>
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="var(--accent-gold)" color="var(--accent-gold)" />
-                  ))}
+
+        {isMobile ? (
+          /* Mobile: single-card carousel with fade */
+          <div className={styles.carousel}>
+            <div className={styles.carouselTrack}>
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className={`${styles.carouselSlide} ${index === activeIndex ? styles.carouselActive : ""}`}
+                >
+                  <div className={styles.card}>
+                    <div className={styles.stars}>
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} size={16} fill="var(--accent-gold)" color="var(--accent-gold)" />
+                      ))}
+                    </div>
+                    <p className={styles.text}>&ldquo;{review.text}&rdquo;</p>
+                    <div className={styles.authorInfo}>
+                      <p className={styles.name}>{review.name}</p>
+                      <p className={styles.event}>{review.event}</p>
+                    </div>
+                  </div>
                 </div>
-                <p className={styles.text}>"{review.text}"</p>
-                <div className={styles.authorInfo}>
-                  <p className={styles.name}>{review.name}</p>
-                  <p className={styles.event}>{review.event}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className={styles.dots}>
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.dot} ${index === activeIndex ? styles.dotActive : ""}`}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Go to review ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          /* Desktop: marquee scroll */
+          <div className={styles.marqueeWrapper}>
+            <div className={styles.marqueeTrack}>
+              {duplicatedReviews.map((review, index) => (
+                <div key={index} className={styles.card}>
+                  <div className={styles.stars}>
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="var(--accent-gold)" color="var(--accent-gold)" />
+                    ))}
+                  </div>
+                  <p className={styles.text}>&ldquo;{review.text}&rdquo;</p>
+                  <div className={styles.authorInfo}>
+                    <p className={styles.name}>{review.name}</p>
+                    <p className={styles.event}>{review.event}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

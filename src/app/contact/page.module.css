@@ -95,7 +95,7 @@
 
 .inputGroup {
   position: relative;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .heroOverlay {
@@ -135,6 +135,16 @@
   transition: border-color 0.3s ease;
 }
 
+.inputGroup select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A0A0A0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+}
+
 .inputGroup textarea {
   resize: vertical;
 }
@@ -160,16 +170,31 @@
 .inputGroup input:focus ~ label,
 .inputGroup input:not(:placeholder-shown) ~ label,
 .inputGroup textarea:focus ~ label,
-.inputGroup textarea:not(:placeholder-shown) ~ label,
-.inputGroup select:focus ~ label,
-.inputGroup select:valid ~ label {
+.inputGroup textarea:not(:placeholder-shown) ~ label {
   top: -20px;
   font-size: 0.8rem;
   color: var(--accent-gold);
 }
 
+/* Select label always floats since select always has a value */
+.inputGroup:has(select) label {
+  top: -20px;
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+}
+
+.inputGroup select:focus ~ label {
+  color: var(--accent-gold);
+}
+
 .inputGroup select option {
   background-color: var(--bg-color);
+  color: var(--text-primary);
+  padding: 8px;
+}
+
+[data-theme='light'] .inputGroup select option {
+  background-color: var(--bg-card);
   color: var(--text-primary);
 }
 

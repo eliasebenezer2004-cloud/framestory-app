@@ -188,3 +188,19 @@
   color: var(--accent-gold);
   border-bottom: 2px solid var(--accent-gold);
 }
+
+/* Invisible hover trigger zone on the right edge (desktop only) */
+.edgeTrigger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100vh;
+  z-index: 997;
+}
+
+@media (max-width: 900px) {
+  .edgeTrigger {
+    display: none;
+  }
+}

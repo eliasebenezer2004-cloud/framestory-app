@@ -21,14 +21,14 @@ const services = [
     title: "Puberty Functions",
     description: "A celebration of coming of age. We focus on the vibrant colors, the traditional half-saree details, and the joyous family gatherings.",
     features: ["Candid & traditional coverage", "Focus on rituals", "Custom photo books"],
-    image: "/puberty2.png",
+    image: "/puberty1.png",
   },
   {
     id: "seemantham",
     title: "Seemantham (Baby Shower)",
     description: "Honoring the mother-to-be. We beautifully document the blessings, the traditional attire, and the pure joy of welcoming a new life.",
     features: ["Intimate family portraits", "Candid emotional moments", "Highlight reels"],
-    image: "/seemantham1.png",
+    image: "/seemantham2.png",
   }
 ];
 

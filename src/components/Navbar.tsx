@@ -33,7 +33,7 @@ export default function Navbar() {
 
   const closeDrawer = () => setDrawerOpen(false);
 
-  const handleDrawerEnter = useCallback(() => {
+  const handleEdgeEnter = useCallback(() => {
     if (!isDesktop) return;
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
@@ -42,11 +42,11 @@ export default function Navbar() {
     setDrawerOpen(true);
   }, [isDesktop]);
 
-  const handleDrawerLeave = useCallback(() => {
+  const handleEdgeLeave = useCallback(() => {
     if (!isDesktop) return;
     hoverTimeoutRef.current = setTimeout(() => {
       setDrawerOpen(false);
-    }, 300);
+    }, 400);
   }, [isDesktop]);
 
   const handleToggleClick = () => {
@@ -70,7 +70,6 @@ export default function Navbar() {
             </button>
             <button 
               onClick={handleToggleClick}
-              onMouseEnter={handleDrawerEnter}
               className={styles.menuToggle} 
               aria-label="Open Menu"
             >
@@ -80,18 +79,25 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Edge trigger zone — invisible strip on the right edge */}
+      <div 
+        className={styles.edgeTrigger}
+        onMouseEnter={handleEdgeEnter}
+        onMouseLeave={handleEdgeLeave}
+      ></div>
+
       {/* Backdrop */}
       <div 
         className={`${styles.backdrop} ${drawerOpen ? styles.backdropOpen : ""}`} 
         onClick={closeDrawer}
-        onMouseLeave={handleDrawerLeave}
+        onMouseLeave={handleEdgeLeave}
       ></div>
 
       {/* Drawer */}
       <div 
         className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}
-        onMouseEnter={handleDrawerEnter}
-        onMouseLeave={handleDrawerLeave}
+        onMouseEnter={handleEdgeEnter}
+        onMouseLeave={handleEdgeLeave}
       >
         <button onClick={closeDrawer} className={styles.closeBtn} aria-label="Close Menu">
           <X size={32} />
