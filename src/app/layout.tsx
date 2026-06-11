@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   description: "Capturing Trichy's most beautiful stories. Premium wedding & event photography.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
