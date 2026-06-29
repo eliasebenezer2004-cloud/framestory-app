@@ -19,6 +19,10 @@
   position: relative;
 }
 
+.image {
+  object-fit: cover;
+}
+
 .imageWrapper {
   position: relative;
   width: 100%;

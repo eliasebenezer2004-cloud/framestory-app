@@ -110,7 +110,9 @@ export default function PortfolioPage() {
       <section className={styles.hero}>
         <Image src="/portfolio1.png" alt="Our Masterpieces" fill className={styles.heroImage} />
         <div className={styles.heroOverlay}></div>
-        <h1 className={styles.heroTitle}>Our Masterpieces</h1>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>Our Masterpieces</h1>
+        </div>
       </section>
 
       <section className={styles.gallerySection}>
@@ -144,7 +146,7 @@ export default function PortfolioPage() {
                   className={styles.gridImage} 
                 />
                 <div className={styles.overlay}>
-                  <h3>{item.title}</h3>
+                  <h3 className={styles.imageTitle}>{item.title}</h3>
                   <p>{item.category}</p>
                 </div>
               </div>

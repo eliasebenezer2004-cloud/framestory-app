@@ -14,10 +14,15 @@
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8rem;
+  gap: 5rem;
 }
 
 .leftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightColumn {
   display: flex;
   flex-direction: column;
 }
@@ -96,29 +101,6 @@
 .inputGroup {
   position: relative;
   margin-bottom: 2rem;
-}
-
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.heroTitle {
-  font-family: var(--font-heading);
-  font-size: clamp(3rem, 6vw, 5rem);
-  letter-spacing: 2px;
-  color: #F0F0F0;
 }
 
 .inputGroup input,
