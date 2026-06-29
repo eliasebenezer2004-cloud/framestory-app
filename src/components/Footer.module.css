@@ -92,6 +92,10 @@
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+:global([data-theme='light']) .socials a {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .socials a:hover {
   background-color: var(--accent-gold);
   color: #121212;
@@ -103,6 +107,10 @@
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.8rem;
+}
+
+:global([data-theme='light']) .bottom {
+  border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

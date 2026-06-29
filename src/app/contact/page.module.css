@@ -100,7 +100,6 @@
 
 .inputGroup {
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .inputGroup input,
@@ -115,6 +114,12 @@
   font-size: 1rem;
   padding: 10px 0;
   transition: border-color 0.3s ease;
+}
+
+:global([data-theme='light']) .inputGroup input,
+:global([data-theme='light']) .inputGroup select,
+:global([data-theme='light']) .inputGroup textarea {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 
 .inputGroup select {
@@ -183,6 +188,10 @@
 .dateInput::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
+}
+
+:global([data-theme='light']) .dateInput::-webkit-calendar-picker-indicator {
+  filter: none;
 }
 
 .dateLabel {

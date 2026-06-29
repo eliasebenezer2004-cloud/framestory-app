@@ -3,6 +3,15 @@
   background-color: var(--bg-color);
 }
 
+:global([data-theme='light']) .heroTitle {
+  background: linear-gradient(135deg, var(--accent-gold), #FFF8DC, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
 .hero {
   position: relative;
   height: 40vh;
@@ -123,6 +132,10 @@
   padding: 3rem 2rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+:global([data-theme='light']) .pillar {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .pillar:hover {

@@ -3,6 +3,16 @@
   background-color: var(--bg-color);
 }
 
+:global([data-theme='light']) .heroTitle,
+:global([data-theme='light']) .serviceTitle {
+  background: linear-gradient(135deg, var(--accent-gold), #FFF8DC, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
 .hero {
   position: relative;
   width: 100%;

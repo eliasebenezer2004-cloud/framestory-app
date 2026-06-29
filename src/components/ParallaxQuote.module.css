@@ -38,6 +38,15 @@
   /* Gradient text is applied globally via .gradient-text class */
 }
 
+:global([data-theme='light']) .quoteText {
+  background: linear-gradient(135deg, var(--accent-gold), #FFF8DC, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
 .author {
   color: #E0E0E0;
   font-size: 1.2rem;
